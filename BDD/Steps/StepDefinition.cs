@@ -52,7 +52,7 @@ namespace BDD.Steps
         public void ThenICloseTheBrowser()
         {
             driver.Close();
-            driver.Quit();
+            driver.Quit();//
         }
 
     }
