@@ -43,3 +43,12 @@ Scenarios:
 
 - When creating edge driver, you must add the .exe directory as constructor arguments
 - Right click edge driver, open properties and tick "Unblock". Similar to MacOS preventing you from opening applications
+
+### CLI
+
+To run MSBuild, copy the path to your .NET Framework directory/MSBuild.exe and run it from within your project directory. You can also add params to cover extra features. 
+
+```C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe``` >>> Build .csproj or .sln
+```C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe /t:Clean``` >>> Clean .csproj or .sln
+
+To run your tests, use ```.\runtests.cmd```. Tests will output report .htmls into bin/Debug/
