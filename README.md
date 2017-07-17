@@ -38,3 +38,8 @@ Scenarios:
 | IE11    |
 | Edge    |
 ```
+
+### Edge
+
+- When creating edge driver, you must add the .exe directory as constructor arguments
+- Right click edge driver, open properties and tick "Unblock". Similar to MacOS preventing you from opening applications
