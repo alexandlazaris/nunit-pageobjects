@@ -32,7 +32,7 @@ namespace BDD.Steps
             if (browser.Equals("IE11"))
                 driver = new InternetExplorerDriver();
             if (browser.Equals("Edge"))
-                driver = new EdgeDriver();
+                driver = new EdgeDriver(@"C:\bin");
         }
 
         [Given(@"I navigate to ""(.*)""")]
