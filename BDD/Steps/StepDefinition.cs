@@ -4,6 +4,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Edge;
+using OpenQA.Selenium.Remote;
 using BDD.Resources.PageObjects;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,8 @@ namespace BDD.Steps
     [Binding]
     public sealed class StepDefinition
     {
-        static IWebDriver driver;
+        //static IWebDriver driver;
+        static RemoteWebDriver driver;
         IWebElement element;
         Homepage homepage = new Homepage(driver);
 
