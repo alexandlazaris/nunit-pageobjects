@@ -63,50 +63,127 @@ namespace BDD.Features
         
         public virtual void LoadGoogleInMultiBrowser(string browser, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Load Google in MultiBrowser", exampleTags);
-#line 3
-this.ScenarioSetup(scenarioInfo);
+            string[] @__tags = new string[] {
+                    "smoke"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Load Google in MultiBrowser", @__tags);
 #line 4
- testRunner.Given(string.Format("I open {0}", browser), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 5
- testRunner.And("I navigate to \"http://www.google.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given(string.Format("I open {0}", browser), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 6
- testRunner.Then("I have successfully loaded the homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("I navigate to \"http://www.google.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 7
+ testRunner.Then("I have successfully loaded the homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 8
  testRunner.Then("I close the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Load Google in MultiBrowser, Chrome", SourceLine=9)]
+        [TechTalk.SpecRun.ScenarioAttribute("Load Google in MultiBrowser, Chrome", new string[] {
+                "smoke"}, SourceLine=10)]
         public virtual void LoadGoogleInMultiBrowser_Chrome()
         {
-#line 3
+#line 4
 this.LoadGoogleInMultiBrowser("Chrome", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Load Google in MultiBrowser, Firefox", SourceLine=9)]
+        [TechTalk.SpecRun.ScenarioAttribute("Load Google in MultiBrowser, Firefox", new string[] {
+                "smoke"}, SourceLine=10)]
         public virtual void LoadGoogleInMultiBrowser_Firefox()
         {
-#line 3
+#line 4
 this.LoadGoogleInMultiBrowser("Firefox", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Load Google in MultiBrowser, IE11", SourceLine=9)]
+        [TechTalk.SpecRun.ScenarioAttribute("Load Google in MultiBrowser, IE11", new string[] {
+                "smoke"}, SourceLine=10)]
         public virtual void LoadGoogleInMultiBrowser_IE11()
         {
-#line 3
+#line 4
 this.LoadGoogleInMultiBrowser("IE11", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Load Google in MultiBrowser, Edge", SourceLine=9)]
+        [TechTalk.SpecRun.ScenarioAttribute("Load Google in MultiBrowser, Edge", new string[] {
+                "smoke"}, SourceLine=10)]
         public virtual void LoadGoogleInMultiBrowser_Edge()
         {
-#line 3
+#line 4
 this.LoadGoogleInMultiBrowser("Edge", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void Select1StSearchResult(string browser, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "searchResults"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Select 1st search result", @__tags);
+#line 17
+this.ScenarioSetup(scenarioInfo);
+#line 18
+ testRunner.Given(string.Format("I open {0}", browser), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 19
+ testRunner.And("I navigate to \"http://www.google.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 20
+ testRunner.When("I enter in \"text\" into locator \"input#lst-ib\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 21
+ testRunner.When("I press this \"button#_fZl\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 22
+ testRunner.Then("I wait for \"2000\" seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 23
+ testRunner.When("I press this \"div._NId:nth-child(1) h3.r a:nth-child(1)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 24
+ testRunner.Then("I wait for \"5000\" seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 25
+ testRunner.Then("I close the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Select 1st search result, Chrome", new string[] {
+                "searchResults"}, SourceLine=27)]
+        public virtual void Select1StSearchResult_Chrome()
+        {
+#line 17
+this.Select1StSearchResult("Chrome", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Select 1st search result, Firefox", new string[] {
+                "searchResults"}, SourceLine=27)]
+        public virtual void Select1StSearchResult_Firefox()
+        {
+#line 17
+this.Select1StSearchResult("Firefox", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Select 1st search result, IE11", new string[] {
+                "searchResults"}, SourceLine=27)]
+        public virtual void Select1StSearchResult_IE11()
+        {
+#line 17
+this.Select1StSearchResult("IE11", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Select 1st search result, Edge", new string[] {
+                "searchResults"}, SourceLine=27)]
+        public virtual void Select1StSearchResult_Edge()
+        {
+#line 17
+this.Select1StSearchResult("Edge", ((string[])(null)));
 #line hidden
         }
         
