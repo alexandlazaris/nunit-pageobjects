@@ -50,11 +50,19 @@ namespace BDD.Steps
             Assert.IsTrue(element.Enabled);
         }
 
+        [When(@"I send keys ""(.*)""")]
+        public void WhenISendKeysTo(string keys, string selector)
+        {
+            driver.FindElement(By.CssSelector(selector)).SendKeys(keys);
+        }
+
+
+
         [Then(@"I close the browser")]
         public void ThenICloseTheBrowser()
         {
             driver.Close();
-            driver.Quit();//
+            driver.Quit();
         }
 
     }
