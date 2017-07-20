@@ -19,10 +19,10 @@ namespace BDD.Steps
     [Binding]
     public sealed class StepDefinition
     {
-        //static IWebDriver driver;
         static RemoteWebDriver driver;
-        IWebElement element;
-        Homepage homepage = new Homepage(driver);
+        private IWebElement element;
+        private Homepage homepage = new Homepage(driver);
+        private int genericWait = 2;
 
         [Given(@"I open (.*)")]
         public void GivenIOpen(string browser)
@@ -50,7 +50,7 @@ namespace BDD.Steps
             Assert.IsTrue(element.Enabled);
         }
 
-        [When(@"I enter in ""(.*)"" into locator ""(.*)""")]
+        [When(@"I enter in (.*) into locator ""(.*)""")]
         public void WhenIEnterInIntoLocator(string text, string cssSelector)
         {
             driver.FindElementByCssSelector(cssSelector).SendKeys(text);
@@ -69,19 +69,14 @@ namespace BDD.Steps
                 Console.WriteLine("Cannot find: " + buttonOrLink + e.Message);
             }
             element.Click();
-            //need to add a wait before clicking
-        }
-
-        [When(@"I submit this form ""(.*)""")]
-        public void WhenISubmitThisForm(string form)
-        {
-            driver.FindElementByCssSelector(form).Submit();
+            ThenIWaitForSeconds(genericWait);
         }
 
         [Then(@"I wait for ""(.*)"" seconds")]
-        public void ThenIWaitForSeconds(int milliSeconds)
-        {//allow user to enter in seconds, do maths to make it milli seconds
-            Thread.Sleep(milliSeconds);
+        public void ThenIWaitForSeconds(int seconds)
+        {
+            seconds *= 1000;
+            Thread.Sleep(seconds);
         }
 
         [Then(@"I close the browser")]
@@ -90,6 +85,5 @@ namespace BDD.Steps
             driver.Close();
             driver.Quit();
         }
-
     }
 }

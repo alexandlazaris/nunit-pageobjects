@@ -136,23 +136,21 @@ this.ScenarioSetup(scenarioInfo);
 #line 19
  testRunner.And("I navigate to \"http://www.google.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 20
- testRunner.When("I enter in \"text\" into locator \"input#lst-ib\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I enter in \"Why google\" into locator \"input#lst-ib\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 21
  testRunner.When("I press this \"button#_fZl\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 22
- testRunner.Then("I wait for \"2000\" seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 23
  testRunner.When("I press this \"div._NId:nth-child(1) h3.r a:nth-child(1)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 23
+ testRunner.Then("I wait for \"5\" seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 24
- testRunner.Then("I wait for \"5000\" seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 25
  testRunner.Then("I close the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Select 1st search result, Chrome", new string[] {
-                "searchResults"}, SourceLine=27)]
+                "searchResults"}, SourceLine=26)]
         public virtual void Select1StSearchResult_Chrome()
         {
 #line 17
@@ -161,7 +159,7 @@ this.Select1StSearchResult("Chrome", ((string[])(null)));
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Select 1st search result, Firefox", new string[] {
-                "searchResults"}, SourceLine=27)]
+                "searchResults"}, SourceLine=26)]
         public virtual void Select1StSearchResult_Firefox()
         {
 #line 17
@@ -170,7 +168,7 @@ this.Select1StSearchResult("Firefox", ((string[])(null)));
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Select 1st search result, IE11", new string[] {
-                "searchResults"}, SourceLine=27)]
+                "searchResults"}, SourceLine=26)]
         public virtual void Select1StSearchResult_IE11()
         {
 #line 17
@@ -179,7 +177,7 @@ this.Select1StSearchResult("IE11", ((string[])(null)));
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Select 1st search result, Edge", new string[] {
-                "searchResults"}, SourceLine=27)]
+                "searchResults"}, SourceLine=26)]
         public virtual void Select1StSearchResult_Edge()
         {
 #line 17
