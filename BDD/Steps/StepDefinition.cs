@@ -62,14 +62,22 @@ namespace BDD.Steps
             try
             {
                 Assert.IsTrue(driver.FindElementByCssSelector(buttonOrLink).Enabled);
-                element = driver.FindElementByCssSelector(buttonOrLink);
             }
             catch (NoSuchElementException e)
             {
                 Console.WriteLine("Cannot find: " + buttonOrLink + e.Message);
             }
+            element = driver.FindElementByCssSelector(buttonOrLink);
+            Console.WriteLine(element.Text);
             element.Click();
             ThenIWaitForSeconds(genericWait);
+        }
+
+        [When(@"I submit the form ""(.*)""")]
+        public void WhenISubmitTheForm(string cssSelector)
+        {
+            //driver.FindElementByCssSelector(buttonOrLink).SendKeys(Keys.Enter)
+            driver.FindElementByCssSelector(cssSelector).Submit();
         }
 
         [Then(@"I wait for ""(.*)"" seconds")]
