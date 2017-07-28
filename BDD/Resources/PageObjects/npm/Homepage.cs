@@ -24,7 +24,7 @@ namespace BDD.Resources.PageObjects.npm
         [FindsBy(How = How.CssSelector, Using = "form#npm-search")]
         private IWebElement _form;
 
-        public void searchUsingInput(string search)
+        public void SearchUsingInput(string search)
         {// COMPARE AGAINST PREVIOUS FRAMEWORK FINDING,
             _searchBox.Click();
             _searchBox.SendKeys(search);

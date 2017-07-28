@@ -17,21 +17,23 @@ namespace BDD.Resources.PageObjects.npm
             this.driver = driver;
         }
 
-        [FindsBy(How = How.CssSelector, Using = "ul.search-results > div[data-reactid]")]
-        private IList<IWebElement> allSearchResults;
-        
-        public void printElements()
+        [FindsBy(How = How.CssSelector, Using = "ul.search-results > div[data-reactid] h3")]
+        private IList<IWebElement> _searchResultTitles;
+
+        [FindsBy(How = How.CssSelector, Using = "ul.search-results > div[data-reactid] a:first-child")]
+        private IList<IWebElement> _searchResultLinks;
+
+        public void PrintResultHeaders()
         {
-            String[] allText = new String[allSearchResults.Count];
-            int i = 0;
-            foreach (IWebElement element in allSearchResults)
+            foreach (IWebElement element in _searchResultTitles)
             {
                 Console.WriteLine(element.Text);
-                Console.WriteLine(allText[i]);
-                allText[i++] = element.Text;
-                
             }
         }
 
+        public void SelectAResultLink(int index)
+        {
+            _searchResultLinks[index].Click();
+        }
     }
 }
