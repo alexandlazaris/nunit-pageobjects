@@ -64,7 +64,7 @@ namespace BDD.Tests_SpecFlow_Features.Google
         public virtual void LoadGoogleInMultiBrowser(string browser, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "smoke"};
+                    "specflow"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -85,7 +85,7 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Load Google in MultiBrowser, Chrome", new string[] {
-                "smoke"}, SourceLine=10)]
+                "specflow"}, SourceLine=10)]
         public virtual void LoadGoogleInMultiBrowser_Chrome()
         {
 #line 4
@@ -94,7 +94,7 @@ this.LoadGoogleInMultiBrowser("Chrome", ((string[])(null)));
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Load Google in MultiBrowser, Firefox", new string[] {
-                "smoke"}, SourceLine=10)]
+                "specflow"}, SourceLine=10)]
         public virtual void LoadGoogleInMultiBrowser_Firefox()
         {
 #line 4
@@ -103,7 +103,7 @@ this.LoadGoogleInMultiBrowser("Firefox", ((string[])(null)));
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Load Google in MultiBrowser, IE11", new string[] {
-                "smoke"}, SourceLine=10)]
+                "specflow"}, SourceLine=10)]
         public virtual void LoadGoogleInMultiBrowser_IE11()
         {
 #line 4
@@ -112,7 +112,7 @@ this.LoadGoogleInMultiBrowser("IE11", ((string[])(null)));
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Load Google in MultiBrowser, Edge", new string[] {
-                "smoke"}, SourceLine=10)]
+                "specflow"}, SourceLine=10)]
         public virtual void LoadGoogleInMultiBrowser_Edge()
         {
 #line 4
@@ -123,7 +123,7 @@ this.LoadGoogleInMultiBrowser("Edge", ((string[])(null)));
         public virtual void Select1StSearchResult(string browser, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "searchResults"};
+                    "specflow"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -150,7 +150,7 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Select 1st search result, Chrome", new string[] {
-                "searchResults"}, SourceLine=26)]
+                "specflow"}, SourceLine=26)]
         public virtual void Select1StSearchResult_Chrome()
         {
 #line 17
@@ -159,7 +159,7 @@ this.Select1StSearchResult("Chrome", ((string[])(null)));
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Select 1st search result, Firefox", new string[] {
-                "searchResults"}, SourceLine=26)]
+                "specflow"}, SourceLine=26)]
         public virtual void Select1StSearchResult_Firefox()
         {
 #line 17
@@ -168,7 +168,7 @@ this.Select1StSearchResult("Firefox", ((string[])(null)));
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Select 1st search result, IE11", new string[] {
-                "searchResults"}, SourceLine=26)]
+                "specflow"}, SourceLine=26)]
         public virtual void Select1StSearchResult_IE11()
         {
 #line 17
@@ -177,7 +177,7 @@ this.Select1StSearchResult("IE11", ((string[])(null)));
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Select 1st search result, Edge", new string[] {
-                "searchResults"}, SourceLine=26)]
+                "specflow"}, SourceLine=26)]
         public virtual void Select1StSearchResult_Edge()
         {
 #line 17
