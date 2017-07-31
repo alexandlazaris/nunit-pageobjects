@@ -16,18 +16,32 @@ namespace BDD
         public void Setup()
         {
             npmHome = new Homepage(ObjectSetup.Driver);
-            PageFactory.InitElements(ObjectSetup.Driver, npmHome);
             npmSearchResults = new SearchResults(ObjectSetup.Driver);
+            PageFactory.InitElements(ObjectSetup.Driver, npmHome);
             PageFactory.InitElements(ObjectSetup.Driver, npmSearchResults);
         }
 
         [TestMethod]
-        public void TestMethod1()
+        public void LinkThroughHeaderNavigation()
         {
-            
             ObjectSetup.Driver.Navigate().GoToUrl("https://www.npmjs.com/");
-            npmHome.searchUsingInput("hello");
-            npmSearchResults.printElements();
+            npmHome.ClickAllHeaderLinks();
+        }
+
+        [TestMethod]
+        public void LinkThroughFooterNavigation()
+        {
+            ObjectSetup.Driver.Navigate().GoToUrl("https://www.npmjs.com/");
+            npmHome.ClickFooterColumn01Links();
+            npmHome.ClickFooterColumn02Links();
+        }
+
+        [TestMethod]
+        public void SelectASearchResult()
+        {
+            ObjectSetup.Driver.Navigate().GoToUrl("https://www.npmjs.com/");
+            npmHome.SearchUsingInput("hello");
+            npmSearchResults.SelectAResultLink(8);
         }
     }
 }
