@@ -21,6 +21,7 @@ namespace BDD.Resources
         {
             InternetExplorerOptions option = new InternetExplorerOptions()
             {
+                
                 IgnoreZoomLevel = true,
                 EnsureCleanSession = true
             };
@@ -65,6 +66,7 @@ namespace BDD.Resources
                     break;
                 case BrowserType.IE:
                     ObjectSetup.Driver = GetIEDriver();
+                    ObjectSetup.Driver.Manage().Window.Maximize();
                     break;
                 case BrowserType.Edge:
                     ObjectSetup.Driver = GetEdgeDriver();
@@ -72,6 +74,7 @@ namespace BDD.Resources
                 default:
                     throw new NotSupportedException("No such driver: " + ObjectSetup.Config.GetBrowser().ToString());
             }
+
             ObjectSetup.Driver.Manage().Timeouts().PageLoad =
                 TimeSpan.FromSeconds(5);
             ObjectSetup.Driver.Manage().Timeouts().ImplicitWait =
