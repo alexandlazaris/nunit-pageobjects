@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace BDD.Resources.PageObjects.npm
 {
-    public class SearchResults
+    public class SearchResults : BasePageObject
     {
         private IWebDriver driver;
 
-        public SearchResults(IWebDriver driver)
+        public SearchResults(IWebDriver _driver) :base(_driver)
         {
             this.driver = driver;
         }

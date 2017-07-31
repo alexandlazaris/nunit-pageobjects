@@ -10,8 +10,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Edge;
-
-
+using OpenQA.Selenium.Support.PageObjects;
 
 namespace BDD.Resources
 {
@@ -76,7 +75,7 @@ namespace BDD.Resources
             ObjectSetup.Driver.Manage().Timeouts().PageLoad =
                 TimeSpan.FromSeconds(5);
             ObjectSetup.Driver.Manage().Timeouts().ImplicitWait =
-                TimeSpan.FromSeconds(5);
+                TimeSpan.FromSeconds(5);   
         }
 
         [AssemblyCleanup]
