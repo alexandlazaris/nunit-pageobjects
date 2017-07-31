@@ -11,13 +11,13 @@ namespace BDD.Resources.PageObjects.npm
 {
     public class Homepage : BasePageObject
     {
-        private IWebDriver driver;
+        private IWebDriver _driver;
 
         public Homepage(IWebDriver _driver) : base(_driver)
         {
-            this.driver = driver;  
+            this._driver = _driver;
+            PageFactory.InitElements(ObjectSetup.Driver, this);
         }
-
 
         [FindsBy(How = How.CssSelector, Using = "a#nav-enterprise-link")]
         private IWebElement _headerLinkNpmEnterprise;
@@ -27,11 +27,10 @@ namespace BDD.Resources.PageObjects.npm
         private IWebElement _headerLinkPricing;
         [FindsBy(How = How.CssSelector, Using = "a#nav-support-link")]
         private IWebElement _headerLinkSupport;
-
-
+        [FindsBy(How = How.CssSelector, Using = "a[href='/login']")]
+        private IWebElement _btnLogin;
         [FindsBy(How = How.CssSelector, Using = "input#site-search")]
         private IWebElement _searchBox;
-
         [FindsBy(How = How.CssSelector, Using = "form#npm-search")]
         private IWebElement _form;
 
@@ -69,10 +68,16 @@ namespace BDD.Resources.PageObjects.npm
         }
 
         public void SearchUsingInput(string search)
-        {// COMPARE AGAINST PREVIOUS FRAMEWORK FINDING,
+        {
             _searchBox.Click();
             _searchBox.SendKeys(search);
             _form.Submit();
+        }
+
+        public Account SelectLogin()
+        {
+            _btnLogin.Click();
+            return new Account(_driver);
         }
 
     }
