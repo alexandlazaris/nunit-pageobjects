@@ -72,7 +72,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Features\Google\Homepage.feature.cs">
+    <Compile Include="Resources\PageObjects\npm\Account.cs" />
+    <Compile Include="Tests_PageObject\Test_Accounts.cs" />
+    <Compile Include="Tests_SpecFlow_Features\Google\Homepage.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Homepage.feature</DependentUpon>
@@ -93,9 +95,9 @@
     <Compile Include="Resources\PageObjects\google\Homepage.cs" />
     <Compile Include="Resources\PageObjects\npm\Homepage.cs" />
     <Compile Include="Resources\PageObjects\npm\SearchResults.cs" />
-    <Compile Include="Steps\StepDefinition.cs" />
+    <Compile Include="SpecFlow_Steps\StepDefinition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="Tests_PageObject\Test_Smoke.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -104,7 +106,7 @@
     <None Include="Default.srprofile">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Features\Google\Homepage.feature">
+    <None Include="Tests_SpecFlow_Features\Google\Homepage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Homepage.feature.cs</LastGenOutput>
     </None>
@@ -122,7 +124,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Features\NPM\" />
+    <Folder Include="Tests_SpecFlow_Features\NPM\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
