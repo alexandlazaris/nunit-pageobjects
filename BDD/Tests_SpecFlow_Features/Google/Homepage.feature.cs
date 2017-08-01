@@ -17,7 +17,7 @@ namespace BDD.Tests_SpecFlow_Features.Google
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.2.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("Homepage", SourceFile="Tests_SpecFlow_Features\\Google\\Homepage.feature", SourceLine=0)]
+    [TechTalk.SpecRun.FeatureAttribute("Homepage", SourceFile="Tests_SpecFlow_Features\\google\\Homepage.feature", SourceLine=0)]
     public partial class HomepageFeature
     {
         
