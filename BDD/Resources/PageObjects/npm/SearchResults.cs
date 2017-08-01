@@ -15,6 +15,7 @@ namespace BDD.Resources.PageObjects.npm
         public SearchResults(IWebDriver _driver) :base(_driver)
         {
             this.driver = driver;
+            PageFactory.InitElements(ObjectSetup.Driver, this);
         }
 
         [FindsBy(How = How.CssSelector, Using = "ul.search-results > div[data-reactid] h3")]

@@ -17,7 +17,6 @@ namespace BDD
         {
             npmHome = new Homepage(ObjectSetup.Driver);
             npmSearchResults = new SearchResults(ObjectSetup.Driver);
-            PageFactory.InitElements(ObjectSetup.Driver, npmSearchResults);
         }
 
         [TestMethod]
