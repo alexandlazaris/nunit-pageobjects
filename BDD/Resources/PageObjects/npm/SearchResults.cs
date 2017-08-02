@@ -10,12 +10,11 @@ namespace BDD.Resources.PageObjects.npm
 {
     public class SearchResults : BasePageObject
     {
-        private IWebDriver driver;
+        private IWebDriver _driver;
 
-        public SearchResults(IWebDriver _driver) :base(_driver)
+        public SearchResults(IWebDriver driver) : base(driver)
         {
-            this.driver = driver;
-            PageFactory.InitElements(ObjectSetup.Driver, this);
+            this._driver = driver;
         }
 
         [FindsBy(How = How.CssSelector, Using = "ul.search-results > div[data-reactid] h3")]
