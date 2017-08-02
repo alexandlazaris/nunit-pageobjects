@@ -15,9 +15,9 @@ namespace BDD
         [TestInitialize]
         public void Setup()
         {
+            Control.InitSpecflow();
             npmHome = new Homepage(ObjectSetup.Driver);
             npmSearchResults = new SearchResults(ObjectSetup.Driver);
-            PageFactory.InitElements(ObjectSetup.Driver, npmSearchResults);
         }
 
         [TestMethod]
@@ -25,6 +25,7 @@ namespace BDD
         {
             ObjectSetup.Driver.Navigate().GoToUrl("https://www.npmjs.com/");
             npmHome.ClickAllHeaderLinks();
+            Assert.IsTrue(ObjectSetup.Driver.Url.Equals("https://www.npmjs.com/support"));
         }
 
         [TestMethod]

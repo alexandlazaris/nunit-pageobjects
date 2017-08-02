@@ -13,10 +13,9 @@ namespace BDD.Resources.PageObjects.npm
     {
         private IWebDriver _driver;
 
-        public Homepage(IWebDriver _driver) : base(_driver)
+        public Homepage(IWebDriver driver) : base(driver)
         {
-            this._driver = _driver;
-            PageFactory.InitElements(ObjectSetup.Driver, this);
+            this._driver = driver;
         }
 
         [FindsBy(How = How.CssSelector, Using = "a#nav-enterprise-link")]
@@ -25,9 +24,11 @@ namespace BDD.Resources.PageObjects.npm
         private IWebElement _headerLinkFeatures;
         [FindsBy(How = How.CssSelector, Using = "a#nav-pricing-link")]
         private IWebElement _headerLinkPricing;
+        [FindsBy(How = How.CssSelector, Using = "a#nav-docs-link")]
+        private IWebElement _headerLinkDocument;
         [FindsBy(How = How.CssSelector, Using = "a#nav-support-link")]
         private IWebElement _headerLinkSupport;
-        [FindsBy(How = How.CssSelector, Using = "a[href='/login']")]
+        [FindsBy(How = How.CssSelector, Using = "ul.user-info-salutation li:nth-child(2) a")]
         private IWebElement _btnLogin;
         [FindsBy(How = How.CssSelector, Using = "input#site-search")]
         private IWebElement _searchBox;
@@ -36,10 +37,13 @@ namespace BDD.Resources.PageObjects.npm
 
         public void ClickAllHeaderLinks()
         {
-            _headerLinkNpmEnterprise.Click();
-            _headerLinkFeatures.Click();
-            _headerLinkPricing.Click();
-            _headerLinkSupport.Click();
+            Helper.ClickElement(_headerLinkNpmEnterprise);
+            Helper.ClickElement(_headerLinkFeatures);
+            Helper.ClickElement(_headerLinkPricing);
+            Helper.ClickElement(_headerLinkDocument);
+            ObjectSetup.Driver.Navigate().Back();
+            Helper.ClickElement(_headerLinkSupport);
+            /*_headerLinkNpmEnterprise.Click - HOW IT LOOKED BEFORE HELPER CLASS*/
         }
 
         public void ClickFooterColumn01Links()
@@ -65,6 +69,7 @@ namespace BDD.Resources.PageObjects.npm
             ObjectSetup.Driver.Navigate().Back();
             ObjectSetup.Driver.FindElement(By.LinkText("GitHub")).Click();
             ObjectSetup.Driver.Navigate().Back();
+            ObjectSetup.Driver.FindElement(By.LinkText("npm loves you")).Click();
         }
 
         public void SearchUsingInput(string search)
@@ -79,6 +84,5 @@ namespace BDD.Resources.PageObjects.npm
             _btnLogin.Click();
             return new Account(_driver);
         }
-
     }
 }

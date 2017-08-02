@@ -11,6 +11,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Support.PageObjects;
+using TechTalk.SpecFlow;
 
 namespace BDD.Resources
 {
@@ -21,6 +22,7 @@ namespace BDD.Resources
         {
             InternetExplorerOptions option = new InternetExplorerOptions()
             {
+                
                 IgnoreZoomLevel = true,
                 EnsureCleanSession = true
             };
@@ -43,7 +45,7 @@ namespace BDD.Resources
         {
             IWebDriver driver = new InternetExplorerDriver(GetIEOptions());
             return driver;
-        }        
+        }
 
         private static IWebDriver GetEdgeDriver()
         {
@@ -51,8 +53,7 @@ namespace BDD.Resources
             return driver;
         }
 
-        [AssemblyInitialize]
-        public static void InitWebDriver(TestContext tc)
+        public static void InitSpecflow()
         {
             ObjectSetup.Config = new AppConfigReader();
             switch (ObjectSetup.Config.GetBrowser())
@@ -65,6 +66,7 @@ namespace BDD.Resources
                     break;
                 case BrowserType.IE:
                     ObjectSetup.Driver = GetIEDriver();
+                    ObjectSetup.Driver.Manage().Window.Maximize();
                     break;
                 case BrowserType.Edge:
                     ObjectSetup.Driver = GetEdgeDriver();
@@ -72,10 +74,11 @@ namespace BDD.Resources
                 default:
                     throw new NotSupportedException("No such driver: " + ObjectSetup.Config.GetBrowser().ToString());
             }
+
             ObjectSetup.Driver.Manage().Timeouts().PageLoad =
-                TimeSpan.FromSeconds(5);
+                TimeSpan.FromSeconds(10);
             ObjectSetup.Driver.Manage().Timeouts().ImplicitWait =
-                TimeSpan.FromSeconds(5);   
+                TimeSpan.FromSeconds(10);
         }
 
         [AssemblyCleanup]

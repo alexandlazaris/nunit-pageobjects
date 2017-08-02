@@ -1,6 +1,6 @@
 ﻿Feature: Homepage
 
-@smoke	
+@specflow
 Scenario Outline: Load Google in MultiBrowser
 	Given I open <browser>
 	And I navigate to "http://www.google.com"
@@ -13,7 +13,7 @@ Scenarios:
 | IE11    |
 | Edge    |
 
-@searchResults
+@specflow
 Scenario Outline: Select 1st search result
 	Given I open <browser>
 	And I navigate to "http://www.google.com"
