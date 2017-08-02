@@ -62,21 +62,61 @@ namespace BDD.Tests_SpecFlow_Features.Npm
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Link through header navigation", new string[] {
-                "specflow"}, SourceLine=3)]
+                "npm",
+                "specflow"}, SourceLine=4)]
         public virtual void LinkThroughHeaderNavigation()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Link through header navigation", new string[] {
+                        "npm",
                         "specflow"});
-#line 4
-this.ScenarioSetup(scenarioInfo);
 #line 5
- testRunner.Given("I open \"browser\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 6
- testRunner.When("I navigate to npm homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("I navigate to npm homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 7
- testRunner.And("I click on all header links", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I click on all header links", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 8
- testRunner.Then("I will finish on the support page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I will finish on the \"support page\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Link through footer navigation", new string[] {
+                "npm",
+                "specflow"}, SourceLine=11)]
+        public virtual void LinkThroughFooterNavigation()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Link through footer navigation", new string[] {
+                        "npm",
+                        "specflow"});
+#line 12
+this.ScenarioSetup(scenarioInfo);
+#line 13
+ testRunner.Given("I navigate to npm homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 14
+ testRunner.When("I click on all footer links", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 15
+ testRunner.Then("I will finish on the \"home page\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Select a search result", new string[] {
+                "npm",
+                "specflow"}, SourceLine=18)]
+        public virtual void SelectASearchResult()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Select a search result", new string[] {
+                        "npm",
+                        "specflow"});
+#line 19
+this.ScenarioSetup(scenarioInfo);
+#line 20
+ testRunner.Given("I navigate to npm homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 21
+ testRunner.When("I search for a \"chatbot\" package and I select number 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 22
+ testRunner.Then("I will finish on the \"chatbot\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
