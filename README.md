@@ -1,54 +1,21 @@
 # specflow-multibrowser-bdd
-Starting point for writing high level acceptance tests. Also prints out .html report
+Starting point for writing high level acceptance tests. Add Page Objects with custom selectors and methods, create tests and reuse.
 
-Currently covers Chrome, Edge, Firefox and IE11. 
+Currently to edit target browser:
+1. Open App.config
+2. Edit ```Browser``` key to equal ```Chrome```, ```Firefox```, ```IE``` or ```Edge```
 
-To continue, add required page objects and design steps + feature files to your needs.
+## Example of test class
 
-### The difference
-
-To run your scenarios in more than 1 browser, you may end up bloating your Feature file to look like this:
-```
-Scenario: Load Google in MultiBrowser
-	Given I open "Chrome"
-	And I navigate to "http://www.google.com"
-	Then I have successfully loaded the homepage
-	Then I close the browser
-  
-Scenario: Load Edge in MultiBrowser
-	Given I open "Edge"
-	And I navigate to "http://www.google.com"
-	Then I have successfully loaded the homepage
-	Then I close the browser
- ```
-
-Instead, you can loop through the steps with predefined values, where <browser> can be interchanged with values you set below in the ```Scenarios``` table.
-
-```
-Scenario Outline: Load Google in MultiBrowser
-	Given I open <browser>
-	And I navigate to "http://www.google.com"
-	Then I have successfully loaded the homepage
-	Then I close the browser
-
-Scenarios: 
-| browser |
-| Chrome  |
-| Firefox |
-| IE11    |
-| Edge    |
+```[TestMethod]
+        public void LinkThroughHeaderNavigation()
+        {
+            ObjectSetup.Driver.Navigate().GoToUrl("https://www.npmjs.com/");
+            npmHome.ClickAllHeaderLinks();
+            Assert.IsTrue(ObjectSetup.Driver.Url.Equals("https://www.npmjs.com/support"));
+        }
 ```
 
-### Edge
+### Extras
 
-- When creating edge driver, you must add the .exe directory as constructor arguments
-- Right click edge driver, open properties and tick "Unblock". Similar to MacOS preventing you from opening applications
-
-### CLI
-
-To run MSBuild, copy the path to your .NET Framework directory/MSBuild.exe and run it from within your project directory. You can also add params to cover extra features. 
-
-```C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe``` >>> Build .csproj or .sln
-```C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe /t:Clean``` >>> Clean .csproj or .sln
-
-To run your tests, use ```.\runtests.cmd```. Tests will output report .htmls into bin/Debug/
+* Captures screenshots of page on Exceptions when finding elements. Can be expanded to cover other scenarios
