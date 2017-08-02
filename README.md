@@ -1,9 +1,6 @@
-# specflow-multibrowser-bdd
-Starting point for writing high level acceptance tests. Add Page Objects with custom selectors and methods, create tests and reuse.
+# nunit-pageobjects
 
-Currently to edit target browser:
-1. Open App.config
-2. Edit ```Browser``` key to equal ```Chrome```, ```Firefox```, ```IE``` or ```Edge```
+Starting point for writing high level acceptance tests. Add Page Objects with custom selectors and methods, create tests and reuse.
 
 ## Example of test class
 
@@ -16,6 +13,19 @@ Currently to edit target browser:
         }
 ```
 
+## Starting out
+
+1. Delete current test files within ```.\Tests``` and also page object files within ```.\PageObjects```
+2. Create a new Page Object within ```.\PageObjects``` that inherits ```BasePageObject```
+	* You can use this class to add shared methods and properties across pages, otherwise, leave as is
+3. Within new Page Object constructure, pass in ```IWebDriver``` to new class and to base class
+4. From here on, it's full steam ahead for you new page :steam_locomotive:
+
+To edit target browser:
+1. Open App.config
+2. Edit ```Browser``` key to equal ```Chrome```, ```Firefox```, ```IE``` or ```Edge```
+
+
 ### Extras
 
-* Captures screenshots of page on Exceptions when finding elements. Can be expanded to cover other scenarios
+* :camera: Captures screenshots of page on Exceptions when finding elements. Can be expanded to cover other scenarios
