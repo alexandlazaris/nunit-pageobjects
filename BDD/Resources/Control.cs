@@ -11,6 +11,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Support.PageObjects;
+using TechTalk.SpecFlow;
 
 namespace BDD.Resources
 {
@@ -44,7 +45,7 @@ namespace BDD.Resources
         {
             IWebDriver driver = new InternetExplorerDriver(GetIEOptions());
             return driver;
-        }        
+        }
 
         private static IWebDriver GetEdgeDriver()
         {
@@ -52,8 +53,7 @@ namespace BDD.Resources
             return driver;
         }
 
-        [AssemblyInitialize]
-        public static void InitWebDriver(TestContext tc)
+        public static void InitSpecflow()
         {
             ObjectSetup.Config = new AppConfigReader();
             switch (ObjectSetup.Config.GetBrowser())
@@ -76,9 +76,9 @@ namespace BDD.Resources
             }
 
             ObjectSetup.Driver.Manage().Timeouts().PageLoad =
-                TimeSpan.FromSeconds(5);
+                TimeSpan.FromSeconds(10);
             ObjectSetup.Driver.Manage().Timeouts().ImplicitWait =
-                TimeSpan.FromSeconds(5);   
+                TimeSpan.FromSeconds(10);
         }
 
         [AssemblyCleanup]
