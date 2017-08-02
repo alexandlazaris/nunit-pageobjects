@@ -10,12 +10,9 @@ namespace BDD.Resources.PageObjects
 {
     public class BasePageObject
     {
-        private IWebDriver driver;
-
-        public BasePageObject(IWebDriver _driver)
+        public BasePageObject(IWebDriver driver)
         {
-            PageFactory.InitElements(_driver, this);
-            this.driver = _driver;
+            PageFactory.InitElements(driver, this);
         }
     }
 }
