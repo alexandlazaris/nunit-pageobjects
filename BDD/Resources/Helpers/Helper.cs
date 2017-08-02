@@ -15,6 +15,7 @@ namespace BDD.Resources
         public static void ClickElement(IWebElement element)  
         {
             CheckSingleElementPresent(element);
+            Thread.Sleep(500);
             element.Click();
         }
 
