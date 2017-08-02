@@ -73,8 +73,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\PageObjects\npm\Account.cs" />
+    <Compile Include="SpecFlow_Steps\npm\StepDefinition.cs" />
     <Compile Include="Tests_PageObject\Test_Accounts.cs" />
-    <Compile Include="Tests_SpecFlow_Features\Google\Homepage.feature.cs">
+    <Compile Include="Tests_SpecFlow_Features\google\Homepage.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Homepage.feature</DependentUpon>
@@ -88,16 +89,26 @@
     <Compile Include="Resources\AppConfigReader.cs" />
     <Compile Include="Resources\BrowserType.cs" />
     <Compile Include="Resources\Control.cs" />
-    <Compile Include="Resources\Helper.cs" />
+    <Compile Include="Resources\Helpers\Helper.cs" />
     <Compile Include="Resources\IConfig.cs" />
     <Compile Include="Resources\ObjectSetup.cs" />
     <Compile Include="Resources\PageObjects\BasePageObject.cs" />
     <Compile Include="Resources\PageObjects\google\Homepage.cs" />
     <Compile Include="Resources\PageObjects\npm\Homepage.cs" />
     <Compile Include="Resources\PageObjects\npm\SearchResults.cs" />
-    <Compile Include="SpecFlow_Steps\StepDefinition.cs" />
+    <Compile Include="SpecFlow_Steps\google\StepDefinition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests_PageObject\Test_Smoke.cs" />
+    <Compile Include="Tests_SpecFlow_Features\npm\Accounts.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Accounts.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests_SpecFlow_Features\npm\Homepage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Homepage.feature</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -106,7 +117,7 @@
     <None Include="Default.srprofile">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Tests_SpecFlow_Features\Google\Homepage.feature">
+    <None Include="Tests_SpecFlow_Features\google\Homepage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Homepage.feature.cs</LastGenOutput>
     </None>
@@ -122,10 +133,16 @@
     <None Include="SpecRunTestProfile_2011_09.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Tests_SpecFlow_Features\npm\Accounts.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Accounts.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests_SpecFlow_Features\npm\Homepage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Homepage.feature.cs</LastGenOutput>
+    </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Tests_SpecFlow_Features\NPM\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
