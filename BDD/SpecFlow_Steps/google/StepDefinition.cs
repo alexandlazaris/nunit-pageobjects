@@ -7,14 +7,10 @@ using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Remote;
 using BDD.Resources.PageObjects;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using TechTalk.SpecFlow;
-using TechTalk.SpecFlow.Assist;
 using System.Threading;
 
-namespace BDD.Steps
+namespace BDD.SpecFlow_Steps.google
 {
     [Binding]
     public sealed class StepDefinition
