@@ -20,8 +20,11 @@ Starting point for writing high level acceptance tests. Add Page Objects with cu
 	* You can use this class to add shared methods and properties across pages, otherwise, leave as is
 3. Within new Page Object constructure, pass in ```IWebDriver``` to new class and to base class
 4. From here on, it's full steam ahead for you new page :steam_locomotive:
+5. When ready, you can finally create tests :smirk:
+	* Use ```[TestInitialize]``` to initialize your Page Objects before your test runs
+	* Create your tests with ```[TestMethod]``` and run your new framework :runner:
 
-To edit target browser:
+To edit target browser :computer:: 
 1. Open App.config
 2. Edit ```Browser``` key to equal ```Chrome```, ```Firefox```, ```IE``` or ```Edge```
 
