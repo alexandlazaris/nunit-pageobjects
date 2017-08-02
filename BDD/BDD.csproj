@@ -47,6 +47,9 @@
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="nunit.framework, Version=3.7.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.7.1\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="SpecRun.SpecFlowPlugin, Version=1.6.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SpecRun.SpecFlow.2-2-0.1.6.0\lib\net45\SpecRun.SpecFlowPlugin.dll</HintPath>
     </Reference>
@@ -73,13 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\PageObjects\npm\Account.cs" />
-    <Compile Include="SpecFlow_Steps\npm\StepDefinition.cs" />
-    <Compile Include="Tests_PageObject\Test_Accounts.cs" />
-    <Compile Include="Tests_SpecFlow_Features\google\Homepage.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Homepage.feature</DependentUpon>
-    </Compile>
+    <Compile Include="Tests\Test_Accounts.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -96,19 +93,8 @@
     <Compile Include="Resources\PageObjects\google\Homepage.cs" />
     <Compile Include="Resources\PageObjects\npm\Homepage.cs" />
     <Compile Include="Resources\PageObjects\npm\SearchResults.cs" />
-    <Compile Include="SpecFlow_Steps\google\StepDefinition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tests_PageObject\Test_Smoke.cs" />
-    <Compile Include="Tests_SpecFlow_Features\npm\Accounts.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Accounts.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Tests_SpecFlow_Features\npm\Homepage.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Homepage.feature</DependentUpon>
-    </Compile>
+    <Compile Include="Tests\Test_Smoke.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -116,10 +102,6 @@
     </None>
     <None Include="Default.srprofile">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Tests_SpecFlow_Features\google\Homepage.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Homepage.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -132,14 +114,6 @@
     </None>
     <None Include="SpecRunTestProfile_2011_09.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Tests_SpecFlow_Features\npm\Accounts.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Accounts.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests_SpecFlow_Features\npm\Homepage.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Homepage.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup />

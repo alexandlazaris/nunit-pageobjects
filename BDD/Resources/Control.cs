@@ -53,7 +53,8 @@ namespace BDD.Resources
             return driver;
         }
 
-        public static void InitSpecflow()
+        [AssemblyInitialize]
+        public static void InitDriver(TestContext tc)
         {
             ObjectSetup.Config = new AppConfigReader();
             switch (ObjectSetup.Config.GetBrowser())

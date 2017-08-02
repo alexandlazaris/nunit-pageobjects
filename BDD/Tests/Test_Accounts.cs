@@ -14,7 +14,6 @@ namespace BDD.Tests_PageObject
         [TestInitialize]
         public void Setup()
         {
-            Control.InitSpecflow();
             npmHome = new Homepage(ObjectSetup.Driver);
         }
 

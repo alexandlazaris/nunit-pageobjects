@@ -15,7 +15,6 @@ namespace BDD
         [TestInitialize]
         public void Setup()
         {
-            Control.InitSpecflow();
             npmHome = new Homepage(ObjectSetup.Driver);
             npmSearchResults = new SearchResults(ObjectSetup.Driver);
         }
