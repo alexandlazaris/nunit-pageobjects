@@ -15,7 +15,6 @@ namespace BDD.Resources.PageObjects.npm
         public Account(IWebDriver _driver) : base(_driver)
         {
             this._driver = _driver;
-            PageFactory.InitElements(ObjectSetup.Driver, this);
         }
 
         [FindsBy(How = How.CssSelector, Using = "#name")]
