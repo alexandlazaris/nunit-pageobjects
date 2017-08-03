@@ -1,4 +1,4 @@
-# nunit-pageobjects
+# mstest-pageobjects
 
 Starting point for writing high level acceptance tests. Add Page Objects with custom selectors and methods, create tests and reuse.
 
